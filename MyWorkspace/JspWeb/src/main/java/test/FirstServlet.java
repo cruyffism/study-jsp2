@@ -1,4 +1,4 @@
-package test;
+package main.java.test;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
