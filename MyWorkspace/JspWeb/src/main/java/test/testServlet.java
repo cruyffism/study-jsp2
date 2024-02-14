@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class SecondServlet
+ * Servlet implementation class testServlet
  */
-@WebServlet("/Second")
-public class SecondServlet extends HttpServlet {
+@WebServlet("/test")
+public class testServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SecondServlet() {
+    public testServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,13 +29,10 @@ public class SecondServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		System.out.println("SecondServlet!!");
-		PrintWriter out = response.getWriter();
-		out.print("<html><head><title>Test</title></head>");
-		out.print("<body><h1>have a nice day!!</h1></body>");
-		out.print("</html>");
+		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out = response.getWriter(); //String객체
+		out.print("<h1>좋은 하루</h1>");
+		out.print("<h2>화이팅~^^</h2>");
 		out.close();
 	}
 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>계산기 서블릿</title>
+</head>
+<body>
+<!-- 이 HTML 코드는 사용자에게 입력 양식을 제공하여 서블릿에 요청을 보낼 수 있는 웹 페이지를 생성합니다. 이 페이지는 계산기 서블릿과 상호 작용할 수 있도록 만들어져 있습니다. -->
+	<h2>계산기 서블릿</h2>
+	<hr>
+	<form method="post" action="/JspWeb/Calc">  <!-- method 속성은 양식을 전송할 HTTP 메서드를 지정합니다. 여기서는 POST 방식, action 속성은 양식 데이터를 보낼 서버 측 프로그램의 URL을 지정합니다. -->
+		<input type="text" name="n1" size="10"> 
+		
+		<Select name="op">
+			<option>+</option>
+			<option>-</option>
+			<option>*</option>
+			<option>/</option>
+		</Select>
+		
+		<input type="text" name ="n2" size="10">
+		
+		<input type="submit" value="실행">  <!-- 실행 버튼 >> 이거 누르면 데이터가 서버로 전송됨 -->
+	</form>
+</body>
+</html>

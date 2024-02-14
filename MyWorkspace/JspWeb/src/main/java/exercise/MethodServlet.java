@@ -1,4 +1,4 @@
-package test;
+package exercise;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class SecondServlet
+ * Servlet implementation class MethodServlet
  */
-@WebServlet("/Second")
-public class SecondServlet extends HttpServlet {
+@WebServlet("/Method")
+public class MethodServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SecondServlet() {
+    public MethodServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,23 +28,21 @@ public class SecondServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		System.out.println("SecondServlet!!");
+		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		out.print("<html><head><title>Test</title></head>");
-		out.print("<body><h1>have a nice day!!</h1></body>");
-		out.print("</html>");
+		out.print("<h1>get 방식으로 처리됨</h1>");
 		out.close();
+				
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		out.print("<h1>post 방식으로 처리됨</h1>");
+		out.close();
 	}
 
 }

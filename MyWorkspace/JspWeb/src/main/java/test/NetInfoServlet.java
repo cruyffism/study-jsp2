@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class NetInfoServlet
  */
-@WebServlet("/netInfo")
+@WebServlet("/NetInfo")
 public class NetInfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -27,15 +27,22 @@ public class NetInfoServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		response.setContentType("text/html;charset=EUC-KR");
-		PrintWriter out = response.getWriter();
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		res.setContentType("text/html;charset=EUC-KR");
+		PrintWriter out = res.getWriter();
 		out.print("<html>");
-		out.print("<html>");
-		
-		
+		out.print("<head><title>Request 정보 출력 Servlet</title></head>");
+		out.print("<body>");
+		out.print("<h3>Request 정보 출력</h3>");
+		out.print("Request Scheme : " + req.getScheme() + "<br/>");
+		out.print("Server Name : " + req.getServerName() + "<br/>");
+		out.print("Server Address : " + req.getLocalAddr() + "<br/>");
+		out.print("Server Port : " + req.getServerPort() + "<br/>");
+		out.print("Client Address : " + req.getRemoteAddr() + "<br/>");
+		out.print("Client Host : " + req.getRemoteHost() + "<br/>");
+		out.print("Client Port : " + req.getRemotePort() + "<br/>");
+		out.print("</body></html>");
+		out.close();
 	}
 
 	/**
