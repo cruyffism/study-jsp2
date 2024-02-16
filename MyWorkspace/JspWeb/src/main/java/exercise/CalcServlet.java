@@ -65,8 +65,9 @@ public class CalcServlet extends HttpServlet {
 		// 문서가 작성되어 출력됩니다.
 		response.setContentType("text/html; charset=utf-8"); //setContentType메소드는 응답할 페이지의 환경을 설정해 준다, 가장이 기본이 되는 응답방식 text/html, 문자 인코딩 방식 charset=UTF-8
 		PrintWriter out = response.getWriter(); //HttpServletResponse 객체인 response를 통해 클라이언트에게 데이터를 출력할 수 있는 PrintWriter를 가져옴
-		out.append("<html><body><h2>계산기 서블릿</h2><hr>").append("계산 결과: " + result + "</body></html>");
-
+		out.append("<html><body><h2>계산기 서블릿</h2><hr>").append("계산 결과: " + result + "</body></html>");  
+		// 인수로 전달 된 값을 문자열로 변환한 후, 해당 문자열의 마지막에 추가 즉 이어붙임.
+		// String 클래스의 concat()메소드와 같은 결과를 도출하지만 내부 처리 속도가 훨씬 빠르다.
 	}
 
 	/**

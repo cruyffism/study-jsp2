@@ -63,12 +63,12 @@ public class QueryTestServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		resp.setContentType("text/html;charset=UTF-8");
+		resp.setContentType("text/html;charset=UTF-8"); //서버>>클라이언트 보낼때 인코딩
 		PrintWriter out = resp.getWriter();
 		out.print("<html><head><title>Query 문자열 테스트</title></head>");
 		out.print("<h1>POST 방식으로 요청되었습니다.</h1>");
 		
-		req.setCharacterEncoding("UTF-8");
+		req.setCharacterEncoding("UTF-8"); //클라이언트>>서버 보낼때 인코딩
 		String id = req.getParameter("id");
 		String password = req.getParameter("pwd");
 		String name = req.getParameter("name");
