@@ -36,6 +36,7 @@ public class SignUpServlet extends HttpServlet {
 		String pw = request.getParameter("pw");
 		String pw_check = request.getParameter("pw_check");
 		String email = request.getParameter("email");
+		String email2 = request.getParameter("email2");
 		String postCode = request.getParameter("postCode");
 		String address = request.getParameter("address");
 		String phoneNumber = request.getParameter("phoneNumber");
@@ -47,7 +48,7 @@ public class SignUpServlet extends HttpServlet {
 		out.print("주민번호 : " + nationalNum1 + "-" + nationalNum2 + "<br>");
 		out.print("아이디 : " + id + "<br>");
 		out.print("비밀번호 : " + pw + "<br>");
-		out.print("이메일 : " + email + "<br>");
+		out.print("이메일 : " + email + "@" + email2 + "<br>");
 		out.print("우편번호 : " + postCode + "<br>");
 		out.print("주소 : " + address + "<br>");
 		out.print("핸드폰번호 : " + phoneNumber + "<br>");
