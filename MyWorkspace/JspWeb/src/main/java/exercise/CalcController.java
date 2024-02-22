@@ -38,8 +38,8 @@ public class CalcController extends HttpServlet {
 		case "/" : result = n1 / n2; break;
 		case "*" : result = n1 * n2; break;
 		}
-		request.setAttribute("result", result);
-		getServletContext().getRequestDispatcher("/exercise/calc.jsp")
+		request.setAttribute("result", result); // result를 "result"라는 변수에 담음
+		getServletContext().getRequestDispatcher("/exercise/calc.jsp") // 옆에 경로대로 로딩 
 		.forward(request, response);
 	}
 
