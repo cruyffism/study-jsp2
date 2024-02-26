@@ -1,7 +1,7 @@
 package com.mit.DB;
 
 import java.sql.Date;
-// do
+// do >> 데이터 구조를 선언하는 것
 public class Student {
 	private int id;
 	private String username;

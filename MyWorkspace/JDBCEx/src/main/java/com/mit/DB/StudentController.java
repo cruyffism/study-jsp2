@@ -17,7 +17,7 @@ import org.apache.commons.beanutils.BeanUtils;
 @WebServlet("/studentControl")
 public class StudentController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-     StudentDAO dao; 
+     StudentDAO dao; //dao를 쓰겠다
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -26,8 +26,8 @@ public class StudentController extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
     public void init(ServletConfig config) throws ServletException { // 프로그램을 자동으로 실행시켜주는 메소드
-    	super.init(config);
-    	dao = new StudentDAO();
+    	super.init(config); //처음 시작할 때마다
+    	dao = new StudentDAO(); // dao 객체 생성 (메소드 사용을 위해서)
     }
 	/**
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
@@ -38,7 +38,7 @@ public class StudentController extends HttpServlet {
 		String view = "";
 		
 		if(action == null) {
-			getServletContext().getRequestDispatcher("/studentControl?action=list")
+			getServletContext().getRequestDispatcher("/studentControl?action=list")// 새로고침 누르면 바로 list 보여줌 (현재 action이 null이라서)
 			.forward(request, response);
 		} else {
 			switch(action) {
@@ -62,7 +62,7 @@ public class StudentController extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		dao.insert(s);
+		dao.insert(s); //insert 메소드 호출
 		return list(request, response);
      }
   }

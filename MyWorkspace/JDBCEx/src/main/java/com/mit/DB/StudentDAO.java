@@ -38,8 +38,8 @@ public class StudentDAO {
 
 	public void insert(Student s) { // insert 메소드
 		open();
-		String sql = "INSERT INTO student(id, username, univ, birth, email) values(SEQ_ID.NEXTVAL,?,?,?,?)"; // sql 변수
-																												// 만들고
+		String sql = "INSERT INTO student(id, username, univ, birth, email) values(SEQ_ID.NEXTVAL,?,?,?,?)"; // sql 변수 만들고
+																												
 
 		try {
 			pstmt = conn.prepareStatement(sql); // 위 변수를 호출
@@ -81,6 +81,6 @@ public class StudentDAO {
 			close();
 		}
 
-		return students;
+		return students; //student 정보를 이 리턴값에 담는다.
 	}
 }
